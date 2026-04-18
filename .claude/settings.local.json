@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.goldenagegroup.com.au)",
+      "Bash(python3 -c \":*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(/usr/bin/python3 -c \"import http.server; print\\(''works''\\)\")",
+      "Bash(chmod +x \"/Users/natalyduran/Documents/Documents/Web dev/Arlo Estimating/serve.py\")",
+      "Bash(/usr/local/bin/python3 --version)",
+      "Bash(/opt/homebrew/bin/python3 --version)",
+      "Bash(/usr/bin/python3 -c \"print\\(''works''\\)\")",
+      "Bash(ruby -e \"require ''webrick''; puts ''webrick ok''\")",
+      "Bash(xargs kill:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8080/index.html)",
+      "Bash(curl -s http://127.0.0.1:8080/index.html)",
+      "Bash(pkill -f arlo_serve)",
+      "Bash(cp \"/Users/natalyduran/Documents/Documents/Web dev/Arlo Estimating/index.html\" /tmp/arlo-site/index.html)",
+      "Bash(ipconfig getifaddr:*)",
+      "Bash(gh auth:*)",
+      "Bash(cp \"/Users/natalyduran/Documents/Documents/Web dev/Arlo Estimating/index.html\" \"/Users/natalyduran/GitHub/arlo-estimating/Arlo Estimating/index.html\")",
+      "Bash(cp -r \"/Users/natalyduran/Documents/Documents/Web dev/Arlo Estimating/Assets\" \"/Users/natalyduran/GitHub/arlo-estimating/Arlo Estimating/Assets\")"
+    ]
+  }
+}
