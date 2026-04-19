@@ -277,6 +277,29 @@
     }
     .overlay-menu__mobile-close {
       display: none;
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2.8rem;
+      height: 2.8rem;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--white);
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 1001;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .overlay-menu__mobile-close svg {
+      width: 2.2rem;
+      height: 2.2rem;
+      stroke: currentColor;
+    }
+    .overlay-menu__mobile-close:hover {
+      color: var(--teal-light);
+      transform: rotate(90deg);
     }
     @media (max-width: 768px) {
       .overlay-menu {
@@ -314,31 +337,10 @@
       .overlay-menu__sub {
         display: none;
       }
-      .overlay-menu__mobile-close {
+    }
+    @media (max-width: 768px) {
+      body.menu-open .overlay-menu__mobile-close {
         display: flex;
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        width: 2.8rem;
-        height: 2.8rem;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: var(--white);
-        background: none;
-        border: none;
-        padding: 0;
-        z-index: 10;
-        transition: color 0.3s, transform 0.3s;
-      }
-      .overlay-menu__mobile-close svg {
-        width: 2.2rem;
-        height: 2.2rem;
-        stroke: currentColor;
-      }
-      .overlay-menu__mobile-close:hover {
-        color: var(--teal-light);
-        transform: rotate(90deg);
       }
     }
 
@@ -1275,10 +1277,10 @@
   </nav>
 
   <!-- ====== FULLSCREEN OVERLAY MENU ====== -->
+  <button class="overlay-menu__mobile-close" id="menuCloseMobile" aria-label="Close menu" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
   <div class="overlay-menu" id="overlayMenu">
-    <button class="overlay-menu__mobile-close" id="menuCloseMobile" aria-label="Close menu" type="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <div class="overlay-menu__columns">
       <div class="overlay-menu__col">
         <a href="#services" class="overlay-menu__heading">Services</a>
