@@ -275,6 +275,9 @@
     body.menu-open {
       overflow: hidden;
     }
+    .overlay-menu__mobile-close {
+      display: none;
+    }
     @media (max-width: 768px) {
       .overlay-menu {
         height: auto;
@@ -309,8 +312,32 @@
         display: none;
       }
       .overlay-menu__sub {
-        align-items: flex-end;
-        text-align: right;
+        display: none;
+      }
+      .overlay-menu__mobile-close {
+        display: flex;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--white);
+        background: none;
+        border: none;
+        padding: 0;
+        transition: color 0.3s, transform 0.3s;
+      }
+      .overlay-menu__mobile-close svg {
+        width: 2.2rem;
+        height: 2.2rem;
+        stroke: currentColor;
+      }
+      .overlay-menu__mobile-close:hover {
+        color: var(--teal-light);
+        transform: rotate(90deg);
       }
     }
 
@@ -1248,6 +1275,9 @@
 
   <!-- ====== FULLSCREEN OVERLAY MENU ====== -->
   <div class="overlay-menu" id="overlayMenu">
+    <button class="overlay-menu__mobile-close" id="menuCloseMobile" aria-label="Close menu" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
     <div class="overlay-menu__columns">
       <div class="overlay-menu__col">
         <a href="#services" class="overlay-menu__heading">Services</a>
@@ -1749,6 +1779,8 @@
     function closeMenu() { menuOpen = false; overlay.classList.remove('open'); nav.classList.remove('menu-open'); document.body.classList.remove('menu-open'); }
     burger.addEventListener('click', () => { menuOpen ? closeMenu() : openMenu(); });
     if (menuClose) menuClose.addEventListener('click', closeMenu);
+    const menuCloseMobile = document.getElementById('menuCloseMobile');
+    if (menuCloseMobile) menuCloseMobile.addEventListener('click', closeMenu);
 
     overlay.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
